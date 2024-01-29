@@ -1,6 +1,6 @@
 import java.util.Random;
 
-final public class Aerosol {
+final public  class aerosolOld {
 
     static double lm=2.0, gm=0.3, k=0.00001;
 
