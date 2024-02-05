@@ -1,0 +1,70 @@
+Interface - gives a blueprint on what should be implemented, however it's just the signature with no body (Also it can
+	    contain static and final values) [static is like public value which is used across all instances of that class]
+Abstract class - is a class that cannot be instantiated, but can be used in subclasses to inherit fields and methods;
+		the subclasses must inherit all fields, methods, and provide implementations for all of them
+Concrete class - is a most common type of class, where all methods are implemented (can use "new" keyword to create it)
+Inheritance - is when a subclass "borrows" methods and fields from its parent
+Polymorphism - is when you implement a function from parent, overriding it, then when it's called it does different things:
+// Java Program for Method Overriding
+ 
+// Class 1
+// Helper class
+class Parent {
+ 
+    // Method of parent class
+    void Print()
+    {
+ 
+        // Print statement
+        System.out.println("parent class");
+    }
+}
+ 
+// Class 2
+// Helper class
+class subclass1 extends Parent {
+ 
+    // Method
+    void Print() { System.out.println("subclass1"); }
+}
+ 
+// Class 3
+// Helper class
+class subclass2 extends Parent {
+ 
+    // Method
+    void Print()
+    {
+ 
+        // Print statement
+        System.out.println("subclass2");
+    }
+}
+ 
+// Class 4
+// Main class
+class GFG {
+ 
+    // Main driver method
+    public static void main(String[] args)
+    {
+ 
+        // Creating object of class 1
+        Parent a;
+ 
+        // Now we will be calling print methods
+        // inside main() method
+ 
+        a = new subclass1();
+        a.Print();
+ 
+        a = new subclass2();
+        a.Print();
+    }
+}
+
+Instatntiation - is the process of creating an object out of blueprint (create an instance of a class)
+Encapsulation - control access to methods and fields, making sure that data is not visible for everyone making use of
+		principle "Principle of least privilege" (PoLP); in other words a class's variables are hidden from
+		other calsses and can only be accessed by the methods of the class in which they are found
+

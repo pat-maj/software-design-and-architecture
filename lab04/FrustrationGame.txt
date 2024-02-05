@@ -1,0 +1,26 @@
+Consider "Simple Frustration" game from lecture lect04
+where we reviewed how to consider the responsibility of creating
+each Spot object
+• What was the GRASP pattern/s we used?
+• Applying this pattern
+• one person determines for (i) Piece and (ii) Die, which object will be
+used to create that?
+• other person determines for (i) Board and (ii) Player, which object will
+be used to create that?
+• Take it in turns to explain what you have decided.
+• Do you both agree? Is there more than 1 answer? How will you decide which
+is the best answer?
+
+All classes for simple "Frustration" game:
+Board, Player, Spot, Die, Piece, Spot Factory, Game ?Turn, Round,
+
+i) Piece is created by Player
+ii) Die is created by Board/Piece
+iii) Board is created by Main/Game
+iiii) Player is created by Board/Main(user's input)
+
+Which object do you think has the role
+• Of rolling the dice - Player/Turn
+• Of moving a pieces - Player/Turn
+• Of declaring a winner - Board/Spot
+

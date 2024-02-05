@@ -65,12 +65,12 @@ public class Particle {
   }
   
   public void setSnapshot() {
-	  snapshot = {
-			  
-	  };
-	  snapshot.x = position.x;
-	  snapshot.y = position.y;
-	  snapshot.z = position.z;
+//	  snapshot = {
+//			  
+//	  };
+//	  snapshot.x = position.x;
+//	  snapshot.y = position.y;
+//	  snapshot.z = position.z;
   }
 
   public void conserveEnergy(double oldMass) {
