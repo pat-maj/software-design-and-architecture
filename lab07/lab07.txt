@@ -1,0 +1,16 @@
+Name - Strategy Design Pattern
+Purposes - The Strategy Design Pattern aims to encapsulate a family of algorithms, making them interchangeable and allowing clients to vary algorithms independently. It enables the definition of a set of algorithms, encapsulates each one, and makes them interchangeable within the same context.
+Problem being solved - The problem being solved by the Strategy pattern is the need for a flexible way to define a set of related algorithms or behaviors and select one of them at runtime without tightly coupling the client code to the implementation details of those algorithms. It helps in situations where different variations of an algorithm are required and when there is a need to avoid proliferation of conditional statements.
+Solution - The solution involves defining a family of algorithms, encapsulating each one into separate classes, and making these algorithms interchangeable by implementing them through a common interface or abstract class. Clients can then select the appropriate algorithm and invoke it through the common interface, promoting flexibility and maintainability.
+Participant / Collaborators:
+	Context: This is the class that maintains a reference to the Strategy interface. It allows clients to dynamically switch between different concrete strategies.
+	Strategy: This is an interface or an abstract class that defines the contract for the interchangeable algorithms.
+	Concrete Strategies: These are the concrete implementations of the Strategy interface, each providing a different algorithm or behavior.
+Consequences / Constraints:
+	Increased complexity: Introducing multiple classes for each algorithm may lead to increased complexity, especially for simple use cases.
+	Potential performance overhead: There might be a slight performance overhead due to the abstraction and indirection introduced by the pattern.
+Implementation:
+	Define a Strategy interface or abstract class that declares the method(s) to be implemented by concrete strategies.
+	Implement concrete strategy classes, each providing a specific algorithm.
+	Define a context class that maintains a reference to a Strategy object and delegates the algorithm execution to the current strategy.
+	Clients interact with the context class and can switch between different strategies dynamically.
