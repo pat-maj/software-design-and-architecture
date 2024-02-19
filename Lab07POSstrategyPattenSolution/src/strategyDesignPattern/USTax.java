@@ -1,10 +1,10 @@
 package strategyDesignPattern;
 
-public class UKTax extends TaxHelper {
+public class USTax extends TaxHelper {
 
 	@Override
 	public float calculateTax(float amount) {
-		return amount * 0.2f;
+		return amount * 0.15f;
 	}
 
 }

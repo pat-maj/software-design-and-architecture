@@ -1,23 +1,24 @@
 package strategyDesignPattern;
 
 public class SaleOrder {
-	float total;
-    int numItems;
-    // set UK tax (i.e. VAT) rate (20%)
-    float taxRate=0.2f;
-    public SaleOrder() {
+	private float total;
+	private int numItems;
+    private final TaxHelper TaxHelper;
+    
+    public SaleOrder(TaxHelper TaxHelper) {
 	System.out.println("new SaleOrder\nzero everything");
 	this.total = 0;
 	this.numItems = 0;
+	this.TaxHelper = TaxHelper;
     }
     public void addItem(float value) {
 	total += value;
 	numItems++;
     }
     public float calcTax() {
-	return taxRate * total;
+    	return TaxHelper.calculateTax(total);
     }
     public float calcTotalCost() {
-	return total;
+	return total + calcTax();
     }
 }
