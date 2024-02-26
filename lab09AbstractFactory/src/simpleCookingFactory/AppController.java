@@ -2,19 +2,15 @@ package simpleCookingFactory;
 
 public class AppController {
 	
-	public AppController(DessertFactory df, String product) {
+	public AppController(DessertFactory df) {
 		
-		switch(product) {
-			case "Pie":
-				df.createPie();
-				break;
-			case "Cake":
-				df.createCake();
-				break;
-			case "Pastry":
-				df.createPastry();
-				break;
-		}
+		Pie pie = df.createPie();
+		Cake cake = df.createCake();
+		Pastry pastry = df.createPastry();
+		
+		pie.displayMessage();
+		cake.displayMessage();
+		pastry.displayMessage();
 	}
 
 	public static void main(String[] args) {
@@ -22,14 +18,20 @@ public class AppController {
 		java.util.Scanner keyboard = new java.util.Scanner(System.in);
 		System.out.print("Create Pie\nEnter fruit (Apple, Banana, Cherry): ");
 		String fruit = keyboard.next();
-		AppController ac = new AppController(new AppleFactory(), "Pie");
+		
+		AppController ac;
 		
 		switch(fruit) {
 			case "Apple":
-				
+				ac = new AppController(new AppleFactory());
+				break;
+			case "Banana":
+				ac = new AppController(new BananaFactory());
 				break;
 			case "Cherry":
+				ac = new AppController(new CherryFactory());
+				break;
 		}
+		
 	}
-// HOW DO I SELECT DIFFERENT PRODUCT? OR Do I need to call Pie p = df.createPie(); p.message.....
 }
