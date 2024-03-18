@@ -1,7 +1,9 @@
 package lab15DependencyInjection;
 
 import business.AbstractCreditCardService;
+import business.AbstractLogger;
 import business.Basket;
+import business.FakeLogger;
 import data.FakeCreditCardServiceFail;
 import data.FakeCreditCardServiceSuccess;
 
@@ -15,6 +17,8 @@ public class TestBasketFactory extends BasketFactory{
 	
 	@Override
 	public Basket createBasket() {
+		AbstractLogger logger = new FakeLogger();
+
 		AbstractCreditCardService fakeCreditCardService;
 		
 		if(success) {
@@ -23,7 +27,7 @@ public class TestBasketFactory extends BasketFactory{
 			fakeCreditCardService = new FakeCreditCardServiceFail();
 		}
 		
-		return new Basket(fakeCreditCardService);
+		return new Basket(fakeCreditCardService, logger);
 	}
 
 }

@@ -1,7 +1,9 @@
 package lab15DependencyInjection;
 
 import business.AbstractCreditCardService;
+import business.AbstractLogger;
 import business.Basket;
+import business.RealLogger;
 import data.ElavonCreditCardService;
 
 public class RealBasketFactory extends BasketFactory{
@@ -14,7 +16,8 @@ public class RealBasketFactory extends BasketFactory{
 
 	@Override
 	public Basket createBasket() {
-		AbstractCreditCardService realCreditCardService = new ElavonCreditCardService(merchCode);
-		return new Basket(realCreditCardService);
+		AbstractLogger logger = new RealLogger();
+		AbstractCreditCardService realCreditCardService = new ElavonCreditCardService(merchCode, logger);
+		return new Basket(realCreditCardService, logger);
 	}
 }
